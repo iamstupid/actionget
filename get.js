@@ -1,6 +1,10 @@
 window.getRegisteredCallbacks=function(m){
-            return (var x=window['~reg~callbacks~'+m]);
+            return window['~reg~callbacks~'+m];
 }
+window.defineModule=function(m){
+            window['~reg~callbacks~'+m]={};
+}
+defineModule("module$_GET")
 window.registerCallback=function(m,f){
             if(window['~status~done~'+m]){
                         f();
